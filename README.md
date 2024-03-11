@@ -36,7 +36,7 @@ MonoBox
 ├── ├── TrainDataset
 ├── ├── TestDataset
 ├── ├── train.txt
-├── ├── test.txt/
+├── ├── test.txt
 ```
 
 ### 3.3 Pretrained model:
@@ -46,7 +46,7 @@ MonoBox
 ├── pretrained_pth
 ```
 
-### 3.4 Testing:
+### 3.4 Evaluation:
 ```
 cd MonoBox
 python eval.py
