@@ -14,8 +14,7 @@
 ![](https://github.com/Huster-Hq/MonoBox/blob/main/Figs/results1.png)
 We provide prediction resuts of all methods. You could download from [Google Drive](https://drive.google.com/drive/folders/19Au4OvsuBYyH0htpE8Xj_7drDvlZ30lB?usp=drive_link)/[Baidu Drive](), including our results and that of compared methods on `Public Synthetic Noise Dataset`.
 
-### 3.1 Performance under Different Levels of Noise
-![](https://github.com/Huster-Hq/MonoBox/blob/main/Figs/results2.png)
+
 
 ## 4. Getting Started
 ### 4.1 Recommended environment:
