@@ -2,6 +2,7 @@
 
 ## 1. Overview
 We propose MonoBox, an innovative box-supervised segmentation method constrained by monotonicity to liberate its training from the user-unfriendly box-tightness assumption. In contrast to conventional box-supervised segmentation, where the box edges must precisely touch the target boundaries, MonoBox leverages imprecisely-annotated boxes to achieve robust pixel-wise segmentation. The 'linchpin' is that, within the noisy zones around box edges, MonoBox discards the traditional misguiding multiple-instance learning loss, and instead optimizes a carefully-designed objective, termed monotonicity constraint. Along directions transitioning from the foreground to background, this new constraint steers responses to adhere to a trend of monotonically decreasing values. Consequently, the originally unreliable learning within the noisy zones is transformed into a correct and effective monotonicity optimization. Moreover, an adaptive label correction is introduced, enabling MonoBox to enhance the tightness of box annotations using predicted masks from the previous epoch and dynamically shrink the noisy zones as training progresses. 
+
 <p align="center">
 <img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/framework.jpg" alt="Image" width="700px">
 <p>
@@ -17,9 +18,7 @@ We propose MonoBox, an innovative box-supervised segmentation method constrained
 <img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/results1.png" alt="Image" width="700px">
 <p>
 
-We provide prediction resuts of all methods. You could download from [Google Drive](https://drive.google.com/drive/folders/19Au4OvsuBYyH0htpE8Xj_7drDvlZ30lB?usp=drive_link), including our results and that of compared methods on `Public Synthetic Noise Dataset`.
-
-
+We provide prediction resuts of all methods. You could download from [Google Drive](https://drive.google.com/drive/folders/19Au4OvsuBYyH0htpE8Xj_7drDvlZ30lB?usp=drive_link), including our results and that of compared methods on `Public Synthetic Noise Dataset` (ClinicDB, Kvasir-SEG, ColonDB, Endoscene, and ETIS).
 
 ## 3. Getting Started
 ### 3.1 Recommended environment:
