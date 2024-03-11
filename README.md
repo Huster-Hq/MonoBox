@@ -29,7 +29,7 @@ torchvision 0.8.0
 Downloading training and testing datasets and move them into ./data/, which can be found in this[Google Drive]()
 
 ### 4.3 Pretrained model:
-You could download the pretrained model from [Google Drive]().
+You could download the pretrained model from [Google Drive](https://drive.google.com/file/d/1Kc4utIDjBqquUKk6EfzTsrf0eBRhV7nH/view?usp=drive_link).
 
 ### 4.4 Testing:
 ```
