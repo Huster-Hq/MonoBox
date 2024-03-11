@@ -36,7 +36,11 @@ MonoBox
 ```
 
 ### 4.3 Pretrained model:
-You could download the pretrained model from [Google Drive](https://drive.google.com/file/d/1Kc4utIDjBqquUKk6EfzTsrf0eBRhV7nH/view?usp=drive_link).
+You could download the pretrained model from [Google Drive](https://drive.google.com/file/d/1Kc4utIDjBqquUKk6EfzTsrf0eBRhV7nH/view?usp=drive_link),  and then put it in the `./pretrained_pth` folder for initialization.
+```
+MonoBox
+├── pretrained_pth
+```
 
 ### 4.4 Testing:
 ```
