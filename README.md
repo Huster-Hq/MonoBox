@@ -24,11 +24,15 @@ Pytorch 1.7.0
 torchvision 0.8.0
 ```
 
-### 4.2 Recommended environment:
+### 4.2 Data preparation
 Downloading training and testing datasets and move them into ./data/, which can be found in this[Google Drive]()
 ```
 MonoBox
  - data/
+ - - TrainDataset/
+ - - TestDataset/
+ - - train.txt/
+ - - test.txt/
 ```
 
 ### 4.3 Pretrained model:
