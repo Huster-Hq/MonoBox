@@ -1,5 +1,6 @@
 # MonoBox: Tightness-free Box-supervised Polyp Segmentation using Monotonicity Constraint
 
-# Introduction
+## Introduction
 
-# Framework Overview
+## Framework Overview
+![](https://github.com/Huster-Hq/MonoBox/blob/main/Figs/framework.jpg)
