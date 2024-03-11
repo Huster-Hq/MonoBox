@@ -17,7 +17,8 @@ We propose MonoBox, an innovative box-supervised segmentation method constrained
 <p align="center">
 <img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/results1.png" alt="Image" width="700px">
 <p>
-We provide prediction resuts of all methods. You could download from [Google Drive](https://drive.google.com/drive/folders/19Au4OvsuBYyH0htpE8Xj_7drDvlZ30lB?usp=drive_link)/[Baidu Drive](), including our results and that of compared methods on `Public Synthetic Noise Dataset`.
+
+We provide prediction resuts of all methods. You could download from [Google Drive](https://drive.google.com/drive/folders/19Au4OvsuBYyH0htpE8Xj_7drDvlZ30lB?usp=drive_link), including our results and that of compared methods on `Public Synthetic Noise Dataset`.
 
 
 
