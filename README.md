@@ -28,11 +28,11 @@ torchvision 0.8.0
 Downloading training and testing datasets and move them into ./data/, which can be found in this[Google Drive]()
 ```
 MonoBox
- - data/
- - - TrainDataset/
- - - TestDataset/
- - - train.txt/
- - - test.txt/
+├── data
+├── ├── TrainDataset
+├── ├── TestDataset
+├── ├── train.txt
+├── ├── test.txt/
 ```
 
 ### 4.3 Pretrained model:
