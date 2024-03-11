@@ -27,6 +27,10 @@ torchvision 0.8.0
 
 ### 4.2 Recommended environment:
 Downloading training and testing datasets and move them into ./data/, which can be found in this[Google Drive]()
+```
+MonoBox
+ - data/
+```
 
 ### 4.3 Pretrained model:
 You could download the pretrained model from [Google Drive](https://drive.google.com/file/d/1Kc4utIDjBqquUKk6EfzTsrf0eBRhV7nH/view?usp=drive_link).
