@@ -25,7 +25,7 @@ torchvision 0.8.0
 ```
 
 ### 4.2 Data preparation
-Downloading training and testing datasets and move them into ./data/, which can be found in this[Google Drive]()
+Downloading training and testing datasets and move them into `./data/`, which can be found in this [Google Drive]()
 ```
 MonoBox
 ├── data
