@@ -47,3 +47,6 @@ MonoBox
 cd MonoBox
 python eval.py
 ```
+
+### 4.5 Well trained model: 
+You could download the trained model from [Google Drive](https://drive.google.com/file/d/1Qi7tvsnm4bTTKYPPuLCPE12OQjeZ0SC1/view?usp=drive_link).
