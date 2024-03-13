@@ -35,8 +35,6 @@ MonoBox
 ├── data
 ├── ├── TrainDataset
 ├── ├── TestDataset
-├── ├── train.txt
-├── ├── test.txt
 ```
 
 ### 3.3 Pretrained model:
