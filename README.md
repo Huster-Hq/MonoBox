@@ -46,11 +46,15 @@ MonoBox
 ├── pretrained_pth
 ```
 
+### 3.4 Test:
+```
+python Test.py
+```
+You could download the `well-trained model` from [Google Drive](https://drive.google.com/file/d/1Qi7tvsnm4bTTKYPPuLCPE12OQjeZ0SC1/view?usp=drive_link), and predict the results by `Test.py`.
+
+
 ### 3.4 Evaluation:
 ```
-cd MonoBox
 python eval.py
 ```
-
-### 3.5 Well trained model: 
-You could download the trained model from [Google Drive](https://drive.google.com/file/d/1Qi7tvsnm4bTTKYPPuLCPE12OQjeZ0SC1/view?usp=drive_link).
+You could compute the evaluation metrics (Dice, IoU, and  HD) of the predictions.
