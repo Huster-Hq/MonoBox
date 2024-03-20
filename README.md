@@ -71,4 +71,4 @@ You could download the `well-trained model` from [Google Drive](https://drive.go
 ```
 python eval.py
 ```
-You could compute the evaluation metrics (Dice, IoU, and  HD) of the predictions.
+You could compute the evaluation metrics (Dice, IoU, and  HD) of the predictions, you could download prediction resuts directly (see Sec. 2.2) and verify the performance.
