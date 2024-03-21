@@ -54,13 +54,13 @@ MonoBox
 ├── pretrained_pth
 ```
 
-### 3.4 Train:
+### 3.4 Training:
 ```
 cd MonoBox
 python Train.py
 ```
 
-### 3.4 Test:
+### 3.4 Testing:
 ```
 python Test.py
 ```
