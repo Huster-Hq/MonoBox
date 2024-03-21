@@ -9,47 +9,29 @@ class SSP_MatchingNet(nn.Module):
         self.refine = refine
 
     def forward(self, feature, mask_q, kernel=False, FP=None, BP=None):
-        # (xmin,ymin,xmax,ymax) = failbox
-        # if kernel:
         h, w = mask_q.shape[-2:]
-
-        # feature maps of support images
-
-        feature_q = feature  #[20,128,44,44]
+        feature_q = feature
         mask = mask_q
         if kernel:
-            # print(feature_q.shape, mask.shape)
             SSFP_1, SSBP_1, ASFP_1, ASBP_1 = self.SSP_func(feature_q, mask)
             FP_1 = SSFP_1 * 1.
             BP_1 = SSBP_1 * 0.3 + ASBP_1 * 0.7
-            # BP_1 = SSBP_1 * 1.
         else:
             FP_1 = FP
             BP_1 = BP
-
         out_1 = self.similarity_func(feature_q, FP_1, BP_1)
-        # print('1111',out_1)
 
         ##################### SSP Refinement #####################
         if self.refine:
             SSFP_2, SSBP_2, ASFP_2, ASBP_2 = self.SSP_func(feature_q, out_1)
-
             FP_2 = SSFP_2 * 1
             BP_2 = SSBP_2 * 0.3 + ASBP_2 * 0.7
-
             FP_2 = FP_1 * 0.4 + FP_2 * 0.6
             BP_2 = BP_1 * 0.4 + BP_2 * 0.6
-
             out_2 = self.similarity_func(feature_q, FP_2, BP_2)
-
             out_2 = out_2 * 0.7 + out_1 * 0.3
         
-        # print(out_1.requires_grad)
-        # _, out_1 = torch.max(out_1, dim=1)
-        # print(out_1.requires_grad)
         out_1 = F.interpolate(out_1, size=(h, w), mode="bilinear", align_corners=True)
-        # _, out_1 = torch.max(out_1, dim=1)
-
         if self.refine:
             out_2 = F.interpolate(out_2, size=(h, w), mode="bilinear", align_corners=True)
             out_ls = [out_2, out_1]
@@ -61,23 +43,10 @@ class SSP_MatchingNet(nn.Module):
         else:
             return out_ls[0]
 
-
-
-    # def SSP_func(self, feature_q, out, failbox = False):
     def SSP_func(self, feature_q, out):
-        # if failbox:
-            # (xmin,ymin,xmax,ymax) = failbox
-        # print(feature_q.shape, out.shape)
         bs = feature_q.shape[0]
-        # pred_1 = out.softmax(1)  #归一化
-        # mask = torch.zeros_like(out)
-        # mask[:,:,ymin:ymax,xmin:xmax] = 1
-        # d = mask.sum()
-        # out = out
-        # print(out)
         pred_1 = out.view(bs, 2, -1)
         pred_fg = pred_1[:, 1]
-        # print('1111:', pred_fg)
         pred_bg = pred_1[:, 0]
         fg_ls = []
         bg_ls = []
@@ -89,13 +58,11 @@ class SSP_MatchingNet(nn.Module):
             cur_feat = feature_q[epi].contiguous().view(feature_q.shape[1], -1)   #[1024,3600]
             f_h, f_w = feature_q[epi].shape[-2:]    #60,60
             if (pred_fg[epi] > fg_thres).sum() > 0:
-                # a = pred_fg[epi](pred_fg[epi] > fg_thres)
                 fg_feat = cur_feat[:, (pred_fg[epi]>fg_thres)] #.mean(-1)
             else:
                 a = (pred_fg[epi] > fg_thres).sum()
                 fg_feat = cur_feat[:, torch.topk(pred_fg[epi], 12).indices] #.mean(-1)  #[1024,12]
             if (pred_bg[epi] > bg_thres).sum() > 0:
-                # print((pred_bg[epi] > bg_thres).sum())
                 b = (pred_bg[epi] > bg_thres).sum()
                 bg_feat = cur_feat[:, (pred_bg[epi]>bg_thres)] #.mean(-1)  #[1024,2365]
             else:
