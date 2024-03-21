@@ -16,8 +16,6 @@ class PVT_TSN(nn.Module):
         # SingleNetwork(num_classes, criterion, norm_layer, pretrained_model)
         self.branch_S = PolypPVT()
         if pretrain:
-            # self.branch_T.load_state_dict({k:v for k,v in torch.load('/data/hq/code/polyp/image_segmentation/Polyp-PVT/results/fully/model_pth/PolypPVT/17PolypPVT-best.pth').items()})
-            # self.branch_S.load_state_dict({k:v for k,v in torch.load('/data/hq/code/polyp/image_segmentation/Polyp-PVT/results/fully/model_pth/PolypPVT/17PolypPVT-best.pth').items()})
             self.branch_T.load_state_dict({k:v for k,v in torch.load('./pretrained_pth/PolypPVT.pth').items()})
             self.branch_S.load_state_dict({k:v for k,v in torch.load('./pretrained_pth/PolypPVT.pth').items()})
         for param in self.branch_T.parameters():
