@@ -109,11 +109,9 @@ class PolypDataset(data.Dataset):
                 print('txt is empty')
             else:
                 with open(box_file, 'r') as f:
-                    # with open(self.clean_box_file[id], 'r') as g:
                         for box in f.readlines():
                             box = box.strip('\n')
                             box = box.split(' ')[1:5]
-                            # [xmin, ymin, xmax, ymax] = [int(n) for n in box]
                             box = [float(n) for n in box]
                             xmin = int((box[0]-box[2]/2)*w)
                             xmax = int((box[0]+box[2]/2)*w)
@@ -269,7 +267,6 @@ class test_dataset_from_txt:
 
     def load_data(self):
         image = self.rgb_loader(self.images[self.index])
-        # gt = np.ones((image.size[1], image.size[0]))
         image = self.transform(image).unsqueeze(0)
         gt = self.binary_loader(self.gts[self.index])
         name = self.images[self.index].split('/')[-1]
