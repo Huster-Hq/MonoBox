@@ -30,16 +30,16 @@ class PVT_TSN(nn.Module):
                 # print(t_param[0], s_param[0])
                 t_param[1].data.copy_(s_param[1].data)
 
-        if step ==1: #训练时候，学生输出
+        if step ==1:
             self._update_ema_variables(0.99, cur_epoch)
             return self.branch_S(x, kernel,FP,BP)
-        elif step ==2: #训练阶段，教师输出
+        elif step ==2:
             with torch.no_grad():
                 return self.branch_T(x,kernel1=True,boxmask1=boxmask)
-        elif step ==3: #测试阶段，学生输出
+        elif step ==3:
             with torch.no_grad():
                 return self.branch_S(x, kernel1=True)
-        elif step ==4: #测试阶段，教师输出
+        elif step ==4:
             with torch.no_grad():
                 return self.branch_T(x,kernel1=True)
         
@@ -88,18 +88,12 @@ class CFM(nn.Module):
         x2_1 = self.conv_upsample1(self.upsample(x1)) * x2
         x3_1 = self.conv_upsample2(self.upsample(self.upsample(x1))) \
                * self.conv_upsample3(self.upsample(x2)) * x3
-
         x2_2 = torch.cat((x2_1, self.conv_upsample4(self.upsample(x1_1))), 1)
         x2_2 = self.conv_concat2(x2_2)
-
         x3_2 = torch.cat((x3_1, self.conv_upsample5(self.upsample(x2_2))), 1)
         x3_2 = self.conv_concat3(x3_2)
-
         x1 = self.conv4(x3_2)
-
         return x1
-
-
 
 
 class GCN(nn.Module):
@@ -201,8 +195,6 @@ class SpatialAttention(nn.Module):
 class PolypPVT(nn.Module):
     def __init__(self, channel=32):
         super(PolypPVT, self).__init__()
-
-#PVT 特征提取器的加载代码
         self.backbone = pvt_v2_b2()  # [64, 128, 320, 512]
         path = './pretrained_pth/pvt_v2_b2.pth'
         save_model = torch.load(path)
@@ -211,28 +203,12 @@ class PolypPVT(nn.Module):
         model_dict.update(state_dict)
         self.backbone.load_state_dict(model_dict)
 
-#Swin Transformer特征提取器的加载代码
-        # self.backbone = pvt() # [96, 192, 384, 768]
-        # path = './pretrained_pth/swin_small_patch4_window7_224_22k.pth'
-        # save_model = torch.load(path)['model']
-        # model_dict = self.backbone.state_dict()
-        # state_dict = {k: v for k, v in save_model.items() if k in model_dict.keys()}
-        # model_dict.update(state_dict)
-        # self.backbone.load_state_dict(model_dict)
-        # print(model_dict)
-        # print(1)
-
-
         self.ssp = SSP_MatchingNet(refine=False)
 
         self.Translayer2_0 = BasicConv2d(64, channel, 1)
         self.Translayer2_1 = BasicConv2d(128, channel, 1)
         self.Translayer3_1 = BasicConv2d(320, channel, 1)
         self.Translayer4_1 = BasicConv2d(512, channel, 1)
-        # self.Translayer2_0 = BasicConv2d(64, channel, 1)
-        # self.Translayer2_1 = BasicConv2d(128, channel, 1)
-        # self.Translayer3_1 = BasicConv2d(320, channel, 1)
-        # self.Translayer4_1 = BasicConv2d(512, channel, 1)
 
         self.CFM = CFM(channel)
         self.ca = ChannelAttention(64)
@@ -266,10 +242,9 @@ class PolypPVT(nn.Module):
 
         # SAM
         T2 = self.Translayer2_0(cim_feature)
-        T2 = self.down05(T2)   #下采样
+        T2 = self.down05(T2) 
         sam_feature = self.SAM(cfm_feature, T2)
 
-        #特征融合
         fusion_feature = torch.cat((T2, x2_t, F.interpolate(x3_t, scale_factor=2, mode='bilinear'), F.interpolate(x4_t, scale_factor=4, mode=
         'bilinear')),1)
 
