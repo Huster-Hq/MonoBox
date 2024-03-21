@@ -64,7 +64,7 @@ python Train.py
 ```
 python Test.py
 ```
-You could download the `well-trained model` from [Google Drive](https://drive.google.com/file/d/1Qi7tvsnm4bTTKYPPuLCPE12OQjeZ0SC1/view?usp=drive_link), and predict the results by `Test.py`.
+You could also download the `well-trained model` from [Google Drive](https://drive.google.com/file/d/1Qi7tvsnm4bTTKYPPuLCPE12OQjeZ0SC1/view?usp=drive_link), and predict the results by `Test.py`.
 
 
 ### 3.4 Evaluation:
