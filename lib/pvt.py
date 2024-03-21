@@ -25,16 +25,16 @@ class PVT_TSN(nn.Module):
                 # print(t_param[0], s_param[0])
                 t_param[1].data.copy_(s_param[1].data)
 
-        if step ==1: #训练时候，学生输出
+        if step ==1:
             self._update_ema_variables(0.99, cur_epoch)
             return self.branch_S(x, kernel,FP,BP)
-        elif step ==2: #训练阶段，教师输出
+        elif step ==2:
             with torch.no_grad():
                 return self.branch_T(x,kernel1=True,boxmask1=boxmask)
-        elif step ==3: #测试阶段，学生输出
+        elif step ==3:
             with torch.no_grad():
                 return self.branch_S(x, kernel1=True)
-        elif step ==4: #测试阶段，教师输出
+        elif step ==4:
             with torch.no_grad():
                 return self.branch_T(x,kernel1=True)
         
@@ -43,9 +43,6 @@ class PVT_TSN(nn.Module):
         for t_param, s_param in zip(self.branch_T.named_parameters(), self.branch_S.named_parameters()):
             # print(s_param)
             t_param[1].data.mul_(ema_decay).add_(1 - ema_decay, s_param[1].data)
-
-
-
 
 
 class BasicConv2d(nn.Module):
