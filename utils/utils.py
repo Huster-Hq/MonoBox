@@ -153,25 +153,15 @@ def mask2boxes(pred, name=None):
     boxes = []
     H,W = pred.shape[1:]
     for i in range(pred.shape[0]):
-       # if name[i] == '/memory/huqiang/Polyp/images/Public_Dataset/PraNet/TrainDataset/images/cju2oi8sq0i2y0801mektzvw8.png':
-           #print('er')
         mask = pred[i]
-        # cv2.imwrite('cju.png', mask*255.)
-        # mask = (mask - mask.min()) / (mask.max() - mask.min() + 1e-8)
-        # cv2.imwrite('cju.png', mask*255.)
         mask[mask<0.5] = 0
         mask[mask>0.5] = 1
-        # cv2.imwrite('cju.png', mask*255.)
         batch_boxes = []
         contours, _ = cv2.findContours(mask.astype('uint8'), cv2.RETR_TREE,cv2.CHAIN_APPROX_NONE)
         if len(contours) != 0:
             for id, contour in enumerate(contours):
-                # if len(np.flip(contour, axis=1).ravel().tolist())<=10:
-                    # continue
                 x,y,w,h = cv2.boundingRect(contour)
                 box = [x, y, x+w-1, y+h-1]
-                # if x<=0 or x>=W:
-                    # continue
                 batch_boxes.append(box)
         boxes.append(batch_boxes)
     return boxes   #[B,N,4]
@@ -194,7 +184,6 @@ def update_box(box_mask, mask_T, iou_thres=0.5):
             iou_gtbox, idx = iou.max(dim=1)  # iou_gtbox:
             idx_match = []
             correct_label_boxes = []
-            # print(idx, iou_gtbox, clean_boxes.shape, torch.tensor(pred_boxes).shape)
             for indexx in range(len(iou_gtbox)):
                 if iou_gtbox[indexx] > iou_thres:
                     idx_match.append(idx[indexx])
@@ -224,8 +213,8 @@ def merge_box(box_mask, mask_T, iou_thres=0.5):
         if pseudo_boxes.numel() != 0:
             if label_boxes.numel() == 0:
                 continue
-            iou = bbox_overlaps(pseudo_boxes, label_boxes) #box_mask2box:[M,4], pseudo_boxes:[N,4] iou: [M,N]
-            iou_gtbox, idx = iou.max(dim=1)  # iou_gtbox:
+            iou = bbox_overlaps(pseudo_boxes, label_boxes)  #box_mask2box:[M,4], pseudo_boxes:[N,4] iou: [M,N]
+            iou_gtbox, idx = iou.max(dim=1)  #iou_gtbox:
             idx_match = []
             correct_label_boxes = []
             for indexx in range(len(iou_gtbox)):
