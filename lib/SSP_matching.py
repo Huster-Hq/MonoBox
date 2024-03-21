@@ -85,8 +85,8 @@ class SSP_MatchingNet(nn.Module):
                 print('bg_feat_norm: nan')
 
             cur_feat_norm_t = cur_feat_norm.t() # N3, 1024
-            fg_sim = torch.matmul(cur_feat_norm_t, fg_feat_norm) * 2.0 # N3, N1    #相似矩阵
-            bg_sim = torch.matmul(cur_feat_norm_t, bg_feat_norm) * 2.0 # N3, N2    #相似矩阵
+            fg_sim = torch.matmul(cur_feat_norm_t, fg_feat_norm) * 2.0 # N3, N1
+            bg_sim = torch.matmul(cur_feat_norm_t, bg_feat_norm) * 2.0 # N3, N2 
 
             fg_sim = fg_sim.softmax(-1)
             bg_sim = bg_sim.softmax(-1)
