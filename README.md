@@ -8,7 +8,7 @@ We propose MonoBox, an innovative box-supervised segmentation method constrained
 <p>
 
 ## 2. Results
-### Failure cases on the COCO
+## Failure cases on the COCO
 <p align="center">
 <img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/Failure_cases.png" alt="Image" width="1200px">
 <p>
@@ -17,7 +17,7 @@ In the obove figure, we show some failure cases of our methodon on the COCO data
 
 Importantly!!! Please note that these limited conditions almost never appear in colorectal endoscope polyp images, so our method is still very effective for the task that is the main focus of our paper, i.e., polyps. Here, we present these failure cases in order to facilitate readers to better understand our method and use our method in suitable scenarios.
 
-### Separate results for each test set on the Public Synthetic Noisy Dataset
+## Separate results for each test set on the Public Synthetic Noisy Dataset
 <p align="center">
 <img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/Results_Public.png" alt="Image" width="1200px">
 <p>
