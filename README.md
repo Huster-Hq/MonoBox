@@ -10,7 +10,7 @@ We propose MonoBox, an innovative box-supervised segmentation method constrained
 ## 2. Results
 ###  Failure cases on the COCO
 <p align="center">
-<img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/Failure_cases.png" alt="Image" width="1000px">
+<img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/Failure_cases.png" alt="Image" width="1200px">
 <p>
 
 In the obove figure, we show some failure cases of our methodon on the COCO dataset, where combined with [BoxInst](https://github.com/aim-uofa/AdelaiDet/blob/master/configs/BoxInst/README.md) (a classical box-supervised instance segmentation model proposed for general objects). For clearer visualization, we use dashed boxes to indicate failure regions. These cases can show the limitations of our proposed method (i.e., MonoBox), mainly for `small-size/thin` objects or `non-connected` objects (e.g. `occluded` objects).
