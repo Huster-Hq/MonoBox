@@ -19,7 +19,7 @@ Importantly!!! Please note that these limited conditions almost never appear in 
 
 ### Separate results for each test set on the Public Synthetic Noisy Dataset
 <p align="center">
-<img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/Results_Public.png" alt="Image" width="1000px">
+<img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/Results_Public.png" alt="Image" width="1200px">
 <p>
 
 
