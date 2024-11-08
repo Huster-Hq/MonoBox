@@ -8,6 +8,11 @@ We propose MonoBox, an innovative box-supervised segmentation method constrained
 <p>
 
 ## 2. Results
+###  Failure cases on the COCO
+<p align="center">
+<img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/failure_cases.png" alt="Image" width="700px">
+<p>
+
 ### 2.1 Quantitative results
 <p align="center">
 <img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/results0.png" alt="Image" width="700px">
