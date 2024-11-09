@@ -13,7 +13,7 @@ We propose MonoBox, an innovative box-supervised segmentation method constrained
 <img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/Failure_cases.png" alt="Image" width="1200px">
 <p>
 
-In the obove figure, we show some failure cases of our methodon on the COCO dataset, where we combined out method with [BoxInst](https://github.com/aim-uofa/AdelaiDet/blob/master/configs/BoxInst/README.md) (a classical box-supervised instance segmentation model proposed for general objects). For clearer visualization, we use dashed boxes to indicate failure regions. These cases can show the limitations of our proposed method (i.e., MonoBox), mainly for `small-size/thin` objects or `non-connected` objects (e.g. `occluded` objects).
+In the obove figure, we show some failure cases of our methodon on the COCO dataset, where we combined our method with [BoxInst](https://github.com/aim-uofa/AdelaiDet/blob/master/configs/BoxInst/README.md) (a classical box-supervised instance segmentation model proposed for general objects). For clearer visualization, we use dashed boxes to indicate failure regions. These cases can show the limitations of our proposed method (i.e., MonoBox), mainly for `small-size/thin` objects or `non-connected` objects (e.g. `occluded` objects).
 
 Importantly!!! Please note that these limited conditions almost never appear in colorectal endoscope polyp images, so our method is still very effective for the task that is the main focus of our paper, i.e., polyps. Here, we present these failure cases in order to facilitate readers to better understand our method and use our method in suitable scenarios.
 
