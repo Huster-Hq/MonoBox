@@ -1,4 +1,15 @@
-# MonoBox: Tightness-free Box-supervised Polyp Segmentation using Monotonicity Constraint
+<div align="center">
+<h1>PSDNet</h1>
+<h3>MonoBox: Tightness-free Box-supervised Polyp Segmentation using Monotonicity
+Constraint</h3>
+<br>
+<a href="https://scholar.google.com/citations?user=rU2JxLIAAAAJ&hl=en">Qiang Hu</a><sup><span>1</span></sup>, Mei Liu<sup><span>2</span></sup>, Qiang Li<sup><span>1,&#8224;</span></sup>, <a href="https://scholar.google.com/citations?user=LwQcmgYAAAAJ&hl=en">Zhiwei Wang</a><sup><span>1, &#8224;</span></sup>
+</br>
+
+<sup>1</sup>  WNLO, HUST,  <sup>2</sup> HUST Tongji Medical College
+<br>
+(<span>&#8224;</span>: corresponding author)
+</div>
 
 ## 1. Overview
 We propose MonoBox, an innovative box-supervised segmentation method constrained by monotonicity to liberate its training from the user-unfriendly box-tightness assumption. In contrast to conventional box-supervised segmentation, where the box edges must precisely touch the target boundaries, MonoBox leverages imprecisely-annotated boxes to achieve robust pixel-wise segmentation. The 'linchpin' is that, within the noisy zones around box edges, MonoBox discards the traditional misguiding multiple-instance learning loss, and instead optimizes a carefully-designed objective, termed monotonicity constraint. Along directions transitioning from the foreground to background, this new constraint steers responses to adhere to a trend of monotonically decreasing values. Consequently, the originally unreliable learning within the noisy zones is transformed into a correct and effective monotonicity optimization. Moreover, an adaptive label correction is introduced, enabling MonoBox to enhance the tightness of box annotations using predicted masks from the previous epoch and dynamically shrink the noisy zones as training progresses. 
@@ -21,8 +32,6 @@ Importantly!!! Please note that these limited conditions almost never appear in 
 <p align="center">
 <img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/Results_Public.png" alt="Image" width="1200px">
 <p>
-
-
 
 ### 2.1 Quantitative results
 <p align="center">
