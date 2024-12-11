@@ -11,11 +11,14 @@
 </div>
 
 ## 1. Overview
-We propose MonoBox, an innovative box-supervised segmentation method constrained by monotonicity to liberate its training from the user-unfriendly box-tightness assumption. In contrast to conventional box-supervised segmentation, where the box edges must precisely touch the target boundaries, MonoBox leverages imprecisely-annotated boxes to achieve robust pixel-wise segmentation. The 'linchpin' is that, within the noisy zones around box edges, MonoBox discards the traditional misguiding multiple-instance learning loss, and instead optimizes a carefully-designed objective, termed monotonicity constraint. Along directions transitioning from the foreground to background, this new constraint steers responses to adhere to a trend of monotonically decreasing values. Consequently, the originally unreliable learning within the noisy zones is transformed into a correct and effective monotonicity optimization. Moreover, an adaptive label correction is introduced, enabling MonoBox to enhance the tightness of box annotations using predicted masks from the previous epoch and dynamically shrink the noisy zones as training progresses. 
+We propose MonoBox, an innovative box-supervised segmentation method constrained by monotonicity to liberate its training from the user-unfriendly box-tightness assumption. Note that MonoBox is plug-and-play and <u>can improve the tolerance of any MIL-based box-supervised segmentation methods (e.g., [BoxInst](https://openaccess.thecvf.com/content/CVPR2021/html/Tian_BoxInst_High-Performance_Instance_Segmentation_With_Box_Annotations_CVPR_2021_paper.html), [BoxLevelSet](https://arxiv.org/abs/2207.09055), [IBoxCLA](https://arxiv.org/abs/2310.07248), etc.) to tightness-free box annotations</u> by simply replacing origional box-supervised loss function (e.g., [MIL loss](https://github.com/chengchunhsu/WSIS_BBTP), [projection loss](https://github.com/aim-uofa/AdelaiDet/blob/master/configs/BoxInst/README.md), and [improved box-dice loss](https://arxiv.org/pdf/2310.07248)) with our proposed monotonicity constraint (MC) loss.
 
 <p align="center">
 <img src="https://github.com/Huster-Hq/MonoBox/blob/main/Figs/fig2.png" alt="Image" width="800px">
 <p>
+
+## 2. Targeted problem: tightness-free box annotations
+
 
 ## 2. Results
 ## Failure cases on the COCO
