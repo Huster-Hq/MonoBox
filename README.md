@@ -2,7 +2,7 @@
 <h1>MonoBox</h1>
 <h3>MonoBox: Tightness-free Box-supervised Polyp Segmentation using Monotonicity Constraint</h3>
 <br>
-<a href="https://scholar.google.com/citations?user=rU2JxLIAAAAJ&hl=en">Qiang Hu</a><sup><span>1</span></sup>, Zhenyu Yi</a><sup><span>2</span></sup>, Ying Zhou</a><sup><span>1</span></sup>, Fan Huang</a><sup><span>3</span></sup>, Mei Liu<sup><span>4</span></sup>, Qiang Li<sup><span>1,&#8224;</span></sup>, <a href="https://scholar.google.com/citations?user=LwQcmgYAAAAJ&hl=en">Zhiwei Wang</a><sup><span>1, &#8224;</span></sup>
+<a href="https://scholar.google.com/citations?user=rU2JxLIAAAAJ&hl=en">Qiang Hu</a><sup><span>1</span></sup>, <a href="https://scholar.google.com/citations?user=yoY2un8AAAAJ&hl=en&oi=ao">Zhenyu Yi</a><sup><span>2</span></sup>, Ying Zhou</a><sup><span>1</span></sup>, Fan Huang</a><sup><span>3</span></sup>, Mei Liu<sup><span>4</span></sup>, <a href="http://faculty.hust.edu.cn/liqiang15/zh_CN/index.htm">Qiang Li</a><sup><span>1</span></sup>, <a href="https://scholar.google.com/citations?user=LwQcmgYAAAAJ&hl=en">Zhiwei Wang</a><sup><span>1, &#8224;</span></sup>
 </br>
 
 <sup>1</sup>  WNLO, HUST, <sup>2</sup>  SES, HUST, <sup>3</sup>  UIH, <sup>4</sup> HUST Tongji Medical College
