@@ -99,9 +99,9 @@ Importantly!!! Please note that these limited conditions almost never appear in 
 <p>
 
 ## Citation
-If you find our paper and code useful in your research, please consider giving us a star ⭐ and citing SALI by the following BibTeX entry.
+If you find our paper and code useful in your research, please consider giving a star :star: and citation :pencil: :
 
-```bash
+```BibTeX
 @article{hu2024monobox,
   title={MonoBox: Tightness-free Box-supervised Polyp Segmentation using Monotonicity Constraint},
   author={Hu, Qiang and Yi, Zhenyu and Zhou, Ying and Li, Ting and Huang, Fan and Liu, Mei and Li, Qiang and Wang, Zhiwei},
