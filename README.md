@@ -102,11 +102,13 @@ Importantly!!! Please note that these limited conditions almost never appear in 
 If you find our paper and code useful in your research, please consider giving a star :star: and citation :pencil: :
 
 ```BibTeX
-@article{hu2024monobox,
-  title={MonoBox: Tightness-free Box-supervised Polyp Segmentation using Monotonicity Constraint},
-  author={Hu, Qiang and Yi, Zhenyu and Zhou, Ying and Li, Ting and Huang, Fan and Liu, Mei and Li, Qiang and Wang, Zhiwei},
-  journal={arXiv e-prints},
-  pages={arXiv--2404},
-  year={2024}
+@inproceedings{hu2025monobox,
+  title={Monobox: Tightness-free box-supervised polyp segmentation using monotonicity constraint},
+  author={Hu, Qiang and Yi, Zhenyu and Zhou, Ying and Huang, Fan and Liu, Mei and Li, Qiang and Wang, Zhiwei},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={4},
+  pages={3572--3580},
+  year={2025}
 }
 ```
